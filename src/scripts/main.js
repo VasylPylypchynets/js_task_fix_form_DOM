@@ -14,18 +14,19 @@ function capitalizeWords(str) {
     .join(' ');
 }
 
-for (let i = 0; i < fieldText.length; i++) {
-  const input = fieldText[i];
+fieldText.forEach((input) => {
   const label = document.createElement('label');
-  const nameInput = splitCamelCase(input.getAttribute('name'));
+  const nameInput = input.getAttribute('name')
+    ? splitCamelCase(input.getAttribute('name'))
+    : null;
   const capitalizedWords = capitalizeWords(nameInput);
   const parentInput = input.parentNode;
 
   label.classList.add('field-label');
   label.setAttribute('for', input.getAttribute('name'));
-  label.textContent = nameInput.toLocaleUpperCase();
+  label.textContent = nameInput.toUpperCase();
 
   input.setAttribute('placeholder', capitalizedWords);
 
   parentInput.insertBefore(label, input);
-}
+});
