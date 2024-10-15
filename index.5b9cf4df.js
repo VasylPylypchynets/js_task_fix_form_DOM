@@ -1,0 +1,2 @@
+document.querySelectorAll(".field-text").forEach(function(t){var e,r="name",l=document.createElement("label"),a=t.getAttribute(r)?((e=t.getAttribute(r)).charAt(0).toUpperCase()===e.charAt(0)&&(e=" "+e),e.replace(/([a-z])([A-Z])/g,"$1 $2").trim()):null,n=null==a?"":a.split(" ").map(function(t){return t.charAt(0).toUpperCase()+t.slice(1)}).join(" "),i=t.parentNode;l.classList.add("field-label"),l.setAttribute("for",t.getAttribute(r)),l.textContent=a.toUpperCase(),t.setAttribute("placeholder",n),i.insertBefore(l,t)});
+//# sourceMappingURL=index.5b9cf4df.js.map
